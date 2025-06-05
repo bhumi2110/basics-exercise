@@ -16,6 +16,7 @@ jobs:
         uses: actions/checkout@v3
       - name: install dependencies
         run: npm ci
+      - name: uploading artifact
         uses: action/upload-artifact@v3
         with: 
           name: dist-files
