@@ -30,6 +30,13 @@ jobs:
         run: npm ci
       - name: Build website
         run: npm run build
+      - name: deploy artifactory
+        uses: actions/upload-artifact@v3
+        with: 
+          name: dist-files
+          path: |
+            package.json
+            dist
   deploy:
     needs: test
     runs-on: ubuntu-latest
